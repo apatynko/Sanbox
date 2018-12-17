@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ListViewOwnerDrawSample
 {
-    public partial class Form1 : Form
+    public partial class ListViewOwnerDraw : Form
     {
-        public Form1()
+        public ListViewOwnerDraw()
         {
             InitializeComponent();
         }
