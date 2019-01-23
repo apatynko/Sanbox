@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RayTracingInWeek
+namespace Chapter2
 {
     class Program
     {
@@ -19,7 +19,7 @@ namespace RayTracingInWeek
             // link to ppm viewer
             // http://www.cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html
             string filePath =
-                @"d:\DEV_stuff\DEV\Sanbox\RayTracingSanbox\RayTracingInWeek\RayTracingInWeek\bin\Debug\Output";
+                @"d:\DEV_stuff\DEV\Sanbox\RayTracingSanbox\RayTracingInWeek\Output";
             using (StreamWriter outputFile = new StreamWriter(Path.Combine(filePath, "texture.ppm"), true))
             {
                 outputFile.Write("P3\n" + nx + " " + ny + "\n255\n");
@@ -32,9 +32,9 @@ namespace RayTracingInWeek
                         float g = (float)j / (float)ny;
                         float b = 0.2f;
 
-                        int ir = (int) (255.99 * r);
-                        int ig = (int) (255.99 * g);
-                        int ib = (int) (255.99 * b);
+                        int ir = (int)(255.99 * r);
+                        int ig = (int)(255.99 * g);
+                        int ib = (int)(255.99 * b);
                         outputFile.Write(ir + " " + ig + " " + ib + "\n");
                         //Console.Write(ir + " " + ig + " " + ib + "\n");
                     }
@@ -42,7 +42,7 @@ namespace RayTracingInWeek
             }
 
             sw.Stop();
-            
+
             Console.WriteLine("Time to output image with StreamWriter : " + sw.ElapsedMilliseconds.ToString() + " ms");
             Console.WriteLine("Press enter to close...");
             Console.ReadLine();
