@@ -8,7 +8,7 @@ namespace Chapters
 {
     public abstract class Hitable
     {
-        public virtual bool Hit(Ray r, float t_min, float t_max, HitRecord rec)
+        public virtual bool Hit(Ray r, float t_min, float t_max, ref HitRecord rec)
         {
             return false;
         }

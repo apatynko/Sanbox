@@ -118,7 +118,7 @@ namespace Chapters
         Vector3 Color(Ray r, Hitable world)
         {
             HitRecord rec = new HitRecord();
-            if (world.Hit(r, 0.001f, float.MaxValue, rec))
+            if (world.Hit(r, 0.0f, float.MaxValue, ref rec))
             {
                 return 0.5f * new Vector3(rec.normal.X + 1.0f, rec.normal.Y + 1.0f, rec.normal.Z + 1.0f);
             }

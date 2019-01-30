@@ -20,7 +20,7 @@ namespace Chapters
             radius = r;
         }
 
-        public override bool Hit(Ray r, float t_min, float t_max, HitRecord rec)
+        public override bool Hit(Ray r, float t_min, float t_max, ref HitRecord rec)
         {
             Vector3 oc = r.Origin() - center;
             float a = Vector3.Dot(r.Direction(), r.Direction());
@@ -29,16 +29,16 @@ namespace Chapters
             float discriminant = b * b - 4 * a * c;
             if (discriminant > 0)
             {
-                float temp = (float) ((-b - Math.Sqrt(b * b - a * c)) / 2 * a);
-                if (temp < t_max && temp > t_min)
+                float temp = (float) ((-b - Math.Sqrt(discriminant)) / 2 * a);
+                if (temp <= t_max && temp >= t_min)
                 {
                     rec.t = temp;
                     rec.p = r.PointAtParameter(rec.t);
                     rec.normal = (rec.p - center) / radius;
                     return true;
                 }
-                temp = (float)((-b + Math.Sqrt(b * b - a * c)) / 2 * a);
-                if (temp < t_max && temp > t_min)
+                temp = (float)((-b + Math.Sqrt(discriminant)) / 2 * a);
+                if (temp <= t_max && temp >= t_min)
                 {
                     rec.t = temp;
                     rec.p = r.PointAtParameter(rec.t);

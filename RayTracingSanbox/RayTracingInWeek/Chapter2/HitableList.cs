@@ -18,14 +18,14 @@ namespace Chapters
         public int listSize;
         public List<Hitable> list;
 
-        public override bool Hit(Ray r, float t_min, float t_max, HitRecord rec)
+        public override bool Hit(Ray r, float t_min, float t_max, ref HitRecord rec)
         {
             HitRecord tempRec = new HitRecord();
             bool hitAnything = false;
             float closestSoFar = t_max;
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i].Hit(r, t_min, closestSoFar, tempRec))
+                if (list[i].Hit(r, t_min, closestSoFar, ref tempRec))
                 {
                     hitAnything = true;
                     closestSoFar = tempRec.t;
