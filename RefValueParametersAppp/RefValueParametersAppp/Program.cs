@@ -16,6 +16,12 @@ namespace RefValueParametersAppp
             ob = new_ob;
         }
 
+        static void FooValueLikeRef(SampleClass ob)
+        {
+            ob.x = 5;
+            ob.y = 5;
+        }
+
         static void FooReference(ref SampleClass ob)
         {
             SampleClass new_ob = new SampleClass();
@@ -50,6 +56,12 @@ namespace RefValueParametersAppp
             test2.y = 1;
             FooRef(test2);
             Console.WriteLine("FooRef result. Value x: {0}, value y:{1}", test2.x, test2.y);
+
+            SampleClass test3 = new SampleClass();
+            test3.x = 1;
+            test3.y = 1;
+            FooValueLikeRef(test3);
+            Console.WriteLine("FooValueLikeRef result. Value x: {0}, value y:{1}", test3.x, test3.y);
 
 
             Console.ReadKey();
