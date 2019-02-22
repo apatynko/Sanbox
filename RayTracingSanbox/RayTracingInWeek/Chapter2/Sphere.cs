@@ -50,6 +50,40 @@ namespace Chapters
             return false;
         }
 
+
+        public static Vector3 random_in_unit_sphere()
+        {
+            // should NOT use new Random(), if it run fast enough then all rdm use the same seed
+            Random rdm = new Random(Guid.NewGuid().GetHashCode());
+            Vector3 p;
+            do
+            {
+                p = 2 * new Vector3(
+                        (float)rdm.NextDouble(),
+                        (float)rdm.NextDouble(),
+                        (float)rdm.NextDouble()) - new Vector3(1, 1, 1);
+            } while (p.LengthSquared() >= 1.0);
+            return p;
+        }
+
+
+        // these method cause StackOverflowException
+        // should be used like Random rdm = new Random(Guid.NewGuid().GetHashCode()); 
+        // instead of Random rdm = new Random();
+        public static Vector3 random_in_unit_sphere_book()
+        {
+            Random rdm = new Random();
+            Vector3 p;
+            do
+            {
+                p = 2 * new Vector3(
+                        (float)rdm.NextDouble(),
+                        (float)rdm.NextDouble(),
+                        (float)rdm.NextDouble()) - new Vector3(1, 1, 1);
+            } while (p.LengthSquared() >= 1.0);
+            return p;
+        }
+
         private Vector3 center;
         private float radius;
     }
