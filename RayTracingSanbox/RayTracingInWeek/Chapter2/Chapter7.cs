@@ -15,10 +15,10 @@ namespace Chapters
     {
         
 
-        Vector3 Color(Ray r, Hitable world)
+        Vector3 Color(Ray r, HitableList world)
         {
             HitRecord rec = new HitRecord();
-            if (world.Hit(r, 0.001f, float.MaxValue, ref rec))
+            if (world.hit(r, 0.001f, float.MaxValue, ref rec))
             {
                 Vector3 target = rec.p + rec.normal + Sphere.random_in_unit_sphere();
                 return 0.5f * Color(new Ray(rec.p, target - rec.p), world);
@@ -43,11 +43,11 @@ namespace Chapters
             // link to ppm viewer
             // http://www.cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html
 
-            List<Hitable> list = new List<Hitable>();
-            list.Add(new Sphere(new Vector3(0.0f, 0.0f, -1.0f), 0.5f));
-            list.Add(new Sphere(new Vector3(0.0f, -100.5f, -1.0f), 100.0f));
+            Hitable[] objList = new Hitable[2];
+            objList[0] = new Sphere(new Vector3(0, 0, -1), 0.5f);
+            objList[1] = new Sphere(new Vector3(0, -100.5f, -1), 100);
 
-            Hitable world = new HitableList(list);
+            HitableList world = new HitableList(objList);
 
             Camera cam = new Camera();
             int sampleCount = 100;

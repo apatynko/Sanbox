@@ -22,7 +22,8 @@ namespace Chapters
             //Chapter5 ch5 = new Chapter5();
             //Chapter5_2 ch5_2 = new Chapter5_2();
             //Chapter6 ch6 = new Chapter6();
-            Chapter7 ch7 = new Chapter7();
+            //Chapter7 ch7 = new Chapter7();
+            Chapter8 ch8 = new Chapter8();
 
             //chp2.Run();
             //chp3.Run();
@@ -30,7 +31,8 @@ namespace Chapters
             //ch5.Run();
             //ch5_2.Run();
             //ch6.Run();
-            ch7.Run();
+            //ch7.Run();
+            ch8.Run();
         }
     }
 }

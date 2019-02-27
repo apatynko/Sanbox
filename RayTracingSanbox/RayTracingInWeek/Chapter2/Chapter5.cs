@@ -115,10 +115,10 @@ namespace Chapters
         //    }
         //}
 
-        Vector3 Color(Ray r, Hitable world)
+        Vector3 Color(Ray r, HitableList world)
         {
             HitRecord rec = new HitRecord();
-            if (world.Hit(r, 0.0f, float.MaxValue, ref rec))
+            if (world.hit(r, 0.0f, float.MaxValue, ref rec))
             {
                 return 0.5f * new Vector3(rec.normal.X + 1.0f, rec.normal.Y + 1.0f, rec.normal.Z + 1.0f);
             }
@@ -145,11 +145,11 @@ namespace Chapters
             Vector3 vertical = new Vector3(0.0f, 2.0f, 0.0f);
             Vector3 origin = new Vector3(0.0f, 0.0f, 0.0f);
 
-            List<Hitable> list = new List<Hitable>();
-            list.Add(new Sphere(new Vector3(0.0f, 0.0f, -1.0f), 0.5f));
-            list.Add(new Sphere(new Vector3(0.0f, -100.5f, -1.0f), 100.0f));
+            Hitable[] objList = new Hitable[2];
+            objList[0] = new Sphere(new Vector3(0, 0, -1), 0.5f);
+            objList[1] = new Sphere(new Vector3(0, -100.5f, -1), 100);
 
-            Hitable world = new HitableList(list);
+            HitableList world = new HitableList(objList);
 
             string filePath = @"d:\DEV_stuff\DEV\Sanbox\RayTracingSanbox\RayTracingInWeek\Output";
 

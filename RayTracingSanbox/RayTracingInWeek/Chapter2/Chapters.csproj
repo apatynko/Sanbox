@@ -54,9 +54,12 @@
     <Compile Include="Chapter5.cs" />
     <Compile Include="Chapter6.cs" />
     <Compile Include="Chapter7.cs" />
+    <Compile Include="Chapter8.cs" />
     <Compile Include="Hitable.cs" />
     <Compile Include="HitableList.cs" />
-    <Compile Include="HitRecord.cs" />
+    <Compile Include="Lambertian.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="Metal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ray.cs" />

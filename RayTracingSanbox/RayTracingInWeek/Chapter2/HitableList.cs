@@ -6,34 +6,29 @@ using System.Threading.Tasks;
 
 namespace Chapters
 {
-    public class HitableList: Hitable
+    public class HitableList
     {
-        public HitableList() { }
+        Hitable[] hitableList = new Hitable[0];
 
-        public HitableList(List<Hitable> l)
+        public HitableList(Hitable[] _hitableList) { this.hitableList = _hitableList; }
+
+        public bool hit(Ray r, float t_min, float t_max, ref HitRecord rec)
         {
-            this.list = l;
-        }
-
-        public int listSize;
-        public List<Hitable> list;
-
-        public override bool Hit(Ray r, float t_min, float t_max, ref HitRecord rec)
-        {
-            HitRecord tempRec = new HitRecord();
-            bool hitAnything = false;
-            float closestSoFar = t_max;
-            for (int i = 0; i < list.Count; i++)
+            HitRecord temp_rec = new HitRecord();
+            bool hit_something = false;
+            float closest_so_far = t_max;
+            foreach (Hitable h in this.hitableList)
             {
-                if (list[i].Hit(r, t_min, closestSoFar, ref tempRec))
+                if (h == null)
+                    continue;
+                if (h.hit(r, t_min, closest_so_far, ref temp_rec))
                 {
-                    hitAnything = true;
-                    closestSoFar = tempRec.t;
-                    rec = tempRec;
+                    hit_something = true;
+                    closest_so_far = temp_rec.t;
+                    rec = temp_rec;
                 }
             }
-
-            return hitAnything;
+            return hit_something;
         }
     }
 }

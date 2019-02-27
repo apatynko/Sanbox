@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Chapters
 {
-    public class HitRecord
+    public interface Material
     {
-        public float t;
-        public Vector3 p;
-        public Vector3 normal;
+        bool scatter(Ray r, HitRecord rec, ref Vector3 attenuation, ref Ray scattered);
     }
 }

@@ -9,18 +9,19 @@ namespace Chapters
 {
     class Sphere: Hitable
     {
+        private Vector3 center;
+        private float radius;
+        private Material mat = new Lambertian(new Vector3(0, 0, 0));
+
         public Sphere()
         {
             
         }
 
-        public Sphere(Vector3 cet, float r)
-        {
-            center = cet;
-            radius = r;
-        }
+        public Sphere(Vector3 cen, float r) { this.center = cen; this.radius = r; }
+        public Sphere(Vector3 cen, float r, Material m) { this.center = cen; this.radius = r; this.mat = m; }
 
-        public override bool Hit(Ray r, float t_min, float t_max, ref HitRecord rec)
+        public bool hit(Ray r, float t_min, float t_max, ref HitRecord rec)
         {
             Vector3 oc = r.Origin() - center;
             float a = Vector3.Dot(r.Direction(), r.Direction());
@@ -29,20 +30,22 @@ namespace Chapters
             float discriminant = b * b - 4 * a * c;
             if (discriminant > 0)
             {
-                float temp = (float) ((-b - Math.Sqrt(discriminant)) / 2 * a);
-                if (temp <= t_max && temp >= t_min)
+                double temp = (-b - Math.Sqrt(discriminant)) / (2 * a);  //  Incorrect code in the book, should divided by 2a NOT a
+                if (t_min <= temp && temp <= t_max)
                 {
-                    rec.t = temp;
-                    rec.p = r.PointAtParameter(rec.t);
+                    rec.t = (float)temp;
+                    rec.p = r.PointAtParameter((float)temp);
                     rec.normal = (rec.p - center) / radius;
+                    rec.mat = this.mat;
                     return true;
                 }
                 temp = (float)((-b + Math.Sqrt(discriminant)) / 2 * a);
-                if (temp <= t_max && temp >= t_min)
+                if(t_min <= temp && temp <= t_max)
                 {
-                    rec.t = temp;
-                    rec.p = r.PointAtParameter(rec.t);
+                    rec.t = (float)temp;
+                    rec.p = r.PointAtParameter((float)temp);
                     rec.normal = (rec.p - center) / radius;
+                    rec.mat = this.mat;
                     return true;
                 }
             }
@@ -84,7 +87,6 @@ namespace Chapters
             return p;
         }
 
-        private Vector3 center;
-        private float radius;
+        
     }
 }

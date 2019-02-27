@@ -9,17 +9,23 @@ using System.Threading.Tasks;
 
 namespace Chapters
 {
-    
-
-    class Chapter6
+    class Chapter8
     {
-
-        Vector3 Color(Ray r, HitableList world)
+        Vector3 Color(Ray r, HitableList world, int depth)
         {
             HitRecord rec = new HitRecord();
-            if (world.hit(r, 0.0f, float.MaxValue, ref rec))
+            if (world.hit(r, 0.001f, float.MaxValue, ref rec))
             {
-                return 0.5f * new Vector3(rec.normal.X + 1.0f, rec.normal.Y + 1.0f, rec.normal.Z + 1.0f);
+                Ray scattered = null;
+                Vector3 attenuation = new Vector3(0, 0, 0);
+                if (depth < 50 && rec.mat.scatter(r, rec, ref attenuation, ref scattered))
+                {
+                    return attenuation * Color(scattered, world, depth + 1);
+                }
+                else
+                {
+                    return  new Vector3(0, 0, 0);
+                }
             }
             else
             {
@@ -41,14 +47,15 @@ namespace Chapters
             // link to ppm viewer
             // http://www.cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html
 
-            Hitable[] objList = new Hitable[2];
-            objList[0] = new Sphere(new Vector3(0, 0, -1), 0.5f);
-            objList[1] = new Sphere(new Vector3(0, -100.5f, -1), 100);
-
+            Hitable[] objList = new Hitable[4];
+            objList[0] = new Sphere(new Vector3(0, 0, -1), 0.5f, new Lambertian(new Vector3(.8f, .3f, .3f)));
+            objList[1] = new Sphere(new Vector3(0, -100.5f, -1), 100, new Lambertian(new Vector3(.8f, .8f, 0)));
+            objList[2] = new Sphere(new Vector3(1, 0, -1), 0.5f, new Metal(new Vector3(.8f, .6f, .2f), 1.0f));
+            objList[3] = new Sphere(new Vector3(-1, 0, -1), 0.5f, new Metal(new Vector3(.8f, .8f, .8f), 0.3f));
             HitableList world = new HitableList(objList);
 
-            Camera cam  = new Camera();
-            int sampleCount = 10;
+            Camera cam = new Camera();
+            int sampleCount = 100;
             Random rdm = new Random();
 
             string filePath = @"d:\DEV_stuff\DEV\Sanbox\RayTracingSanbox\RayTracingInWeek\Output";
@@ -74,12 +81,12 @@ namespace Chapters
                             float v = ((float)j + (float)rdm.NextDouble()) / (float)ny;
                             Ray r = cam.get_ray(u, v);
                             Vector3 p = r.PointAtParameter(2);
-                            col += Color(r, world);
+                            col += Color(r, world, 10);
                         }
 
-                        
+
                         col /= (float)sampleCount;
-                        
+                        col = new Vector3((float)(Math.Sqrt(col.X)), (float)Math.Sqrt(col.Y), (float)Math.Sqrt(col.Z));
                         int ir = (int)(255.99 * col.X);
                         int ig = (int)(255.99 * col.Y);
                         int ib = (int)(255.99 * col.Z);
@@ -96,4 +103,5 @@ namespace Chapters
             Console.ReadLine();
         }
     }
+
 }
