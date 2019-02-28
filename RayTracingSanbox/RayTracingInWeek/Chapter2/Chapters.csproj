@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DA15A203-B387-4F57-B38F-D5C531DC4D4A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Chapter2</RootNamespace>
-    <AssemblyName>Chapter2</AssemblyName>
+    <RootNamespace>Chapters</RootNamespace>
+    <AssemblyName>Chapters</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -55,6 +55,8 @@
     <Compile Include="Chapter6.cs" />
     <Compile Include="Chapter7.cs" />
     <Compile Include="Chapter8.cs" />
+    <Compile Include="Chapter9.cs" />
+    <Compile Include="Dielectric.cs" />
     <Compile Include="Hitable.cs" />
     <Compile Include="HitableList.cs" />
     <Compile Include="Lambertian.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ray.cs" />
     <Compile Include="Sphere.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
