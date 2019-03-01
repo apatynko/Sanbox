@@ -72,7 +72,7 @@ namespace Chapters
                         {
                             float u = ((float)i + (float)rdm.NextDouble()) / (float)nx;
                             float v = ((float)j + (float)rdm.NextDouble()) / (float)ny;
-                            Ray r = cam.get_ray(u, v);
+                            Ray r = cam.getRay(u, v);
                             Vector3 p = r.PointAtParameter(2);
                             col += Color(r, world);
                         }

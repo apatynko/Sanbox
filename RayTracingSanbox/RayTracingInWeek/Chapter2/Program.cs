@@ -24,7 +24,8 @@ namespace Chapters
             //Chapter6 ch6 = new Chapter6();
             //Chapter7 ch7 = new Chapter7();
             //Chapter8 ch8 = new Chapter8();
-            Chapter9 ch9 = new Chapter9();
+            //Chapter9 ch9 = new Chapter9();
+            Chapter10 ch10 = new Chapter10();
 
             //chp2.Run();
             //chp3.Run();
@@ -34,7 +35,8 @@ namespace Chapters
             //ch6.Run();
             //ch7.Run();
             //ch8.Run();
-            ch9.Run();
+            //ch9.Run();
+            ch10.Run();
         }
     }
 }
