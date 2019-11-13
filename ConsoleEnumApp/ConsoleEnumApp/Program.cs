@@ -52,7 +52,8 @@ namespace ConsoleEnumApp
                 {32, "4,5"},
                 {33, "4,5,8"},
                 {34, "4,5,8,12"},
-                {35, "4,5,8,9"}
+                {35, "4,5,8,9"},
+                {36, "1,2,3,4,5,14"}
             };
             Console.WriteLine("Enter number between [8, 35] to process variants of the Crossville applications and press [Enter]");
             
@@ -61,7 +62,7 @@ namespace ConsoleEnumApp
             {
                 var input = Console.ReadLine();
                  var number = Int16.Parse(input);
-                if (number >= 8 && number <= 35)
+                if (number >= 8 && number <= 36)
             {  
                
                     seq = crossvilleDict[number];
@@ -83,7 +84,8 @@ namespace ConsoleEnumApp
                     Console.WriteLine("Parsing applicationAreaID: {0} and Destination: {1}", appAreaID, destination);
                     //Console.WriteLine(SequenceParser.CreateSequanceApllications(appAreaID, destination));
                     Console.WriteLine("Result/Comparation:");
-                    Console.WriteLine(sequenceMap.GetSequenceByAppIDAndDestination(appAreaID, destination));
+                    //Console.WriteLine(sequenceMap.GetSequenceByAppIDAndDestination(appAreaID, destination));
+                    Console.WriteLine(sequenceMap.GetSequenceByAppIDAndDestination(appAreaID, "Floor"));
                     Console.WriteLine("Try again or exit.");
                     Console.WriteLine("To exit enter [x].");
                 //if (Console.ReadKey().Key == ConsoleKey.X) break;

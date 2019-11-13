@@ -30,8 +30,10 @@ namespace ConsoleEnumApp
         Dictionary<ApplicationsAreas, int> m_sequenceMapAppAreas = new Dictionary<ApplicationsAreas, int>()
         {
             {ApplicationsAreas.Counters, 1},
-            {ApplicationsAreas.InteriorDry, 2},
-            {ApplicationsAreas.InteriorWet, 3},
+            {ApplicationsAreas.InteriorDryFloor, 2},
+            {ApplicationsAreas.InteriorWetFloor, 3},
+            {ApplicationsAreas.InteriorDryWall, 4},
+            {ApplicationsAreas.InteriorWetWall, 5},
             {ApplicationsAreas.ShowerLinearDrains, 6},
             {ApplicationsAreas.Shower, 7},
             {ApplicationsAreas.ExteriorCovered, 8},
@@ -131,36 +133,40 @@ namespace ConsoleEnumApp
                         case ApplicationsAreas.PoolFountainFullLining:
                         case ApplicationsAreas.PoolFountainWaterline:
                         case ApplicationsAreas.TileOverTile:
+                        case ApplicationsAreas.InteriorDryFloor:
+                        case ApplicationsAreas.InteriorWetFloor:
+                        case ApplicationsAreas.InteriorDryWall:
+                        case ApplicationsAreas.InteriorWetWall:
                         case ApplicationsAreas.Furniture:
                             //keys.Add(1);
                             keys.Add(GetSeqKey(flagToCheck));
 
                             break;
 
-                        case ApplicationsAreas.InteriorDry:
-                        case ApplicationsAreas.InteriorWet:
-                            {
+                        //case ApplicationsAreas.InteriorDry:
+                        //case ApplicationsAreas.InteriorWet:
+                        //    {
 
-                                if (string.Compare(destination, "Wall", 0) == 0)
-                                {
-                                    //keys.Add(4);
-                                    keys.Add(GetSeqKey(flagToCheck) + 2); // TODO temporal; destination defines the final key.
-                                }
+                        //        if (string.Compare(destination, "Wall", 0) == 0)
+                        //        {
+                        //            //keys.Add(4);
+                        //            keys.Add(GetSeqKey(flagToCheck) + 2); // TODO temporal; destination defines the final key.
+                        //        }
 
-                                if (string.Compare(destination, "Floor", 0) == 0)
-                                {
-                                        //keys.Add(2);
-                                    keys.Add(GetSeqKey(flagToCheck));
-                                    }
-                                if (string.Compare(destination, "Wall/Floor", 0) == 0)
-                                {
-                                    //keys.Add(2);
-                                    //keys.Add(4);
-                                    keys.Add(GetSeqKey(flagToCheck));
-                                    keys.Add(GetSeqKey(flagToCheck) +2); // TODO temporal; destination defines the final key.
-                                }
-                            }
-                            break;
+                        //        if (string.Compare(destination, "Floor", 0) == 0)
+                        //        {
+                        //                //keys.Add(2);
+                        //            keys.Add(GetSeqKey(flagToCheck));
+                        //            }
+                        //        if (string.Compare(destination, "Wall/Floor", 0) == 0)
+                        //        {
+                        //            //keys.Add(2);
+                        //            //keys.Add(4);
+                        //            keys.Add(GetSeqKey(flagToCheck));
+                        //            keys.Add(GetSeqKey(flagToCheck) +2); // TODO temporal; destination defines the final key.
+                        //        }
+                        //    }
+                        //    break;
 
 
                         //case ApplicationsAreas.InteriorWet:

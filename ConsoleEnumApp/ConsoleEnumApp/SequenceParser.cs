@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleEnumApp
 {
-    
+
     public static class SequenceParser
     {
-        
-        
+
+
         public static List<int> GetSequenceList(string s)
         {
             List<int> list = new List<int>();
@@ -173,16 +173,20 @@ namespace ConsoleEnumApp
                         id |= ApplicationsAreas.Counters;
                         break;
                     // 2 - Interior floors dry
-                    // 4 - Interior walls dry
                     case 2:
-                    case 4:
-                        onInteriorDry = true;
+                        id |= ApplicationsAreas.InteriorDryFloor;
                         break;
                     // 3 - Interior floors wet areas
-                    // 5 - Interior walls wet
                     case 3:
+                        id |= ApplicationsAreas.InteriorWetFloor;
+                        break;
+                    // 4 - Interior walls dry
+                    case 4:
+                        id |= ApplicationsAreas.InteriorDryWall;
+                        break;
+                    // 5 - Interior walls wet
                     case 5:
-                        onInteriorWet = true;
+                        id |= ApplicationsAreas.InteriorWetWall;
                         break;
                     case 6:
                         // 6 - Shower floor linear drains
@@ -227,8 +231,7 @@ namespace ConsoleEnumApp
                 }
             }
 
-            if (onInteriorDry) id |= ApplicationsAreas.InteriorDry;
-            if (onInteriorWet) id |= ApplicationsAreas.InteriorWet;
+
             return (int)id;
 
         }
@@ -244,94 +247,75 @@ namespace ConsoleEnumApp
             {
                 if (appAreasValue.HasFlag(flagToCheck))
                     switch (flagToCheck)
-                {
-                    case ApplicationsAreas.Counters:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                    {
+                        case ApplicationsAreas.Counters:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("1 - Counters\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.InteriorDry:
-
-                        //if (appAreasValue.HasFlag(flagToCheck))
-                        {
-                            
-                            if (string.Compare(destination, "Wall", 0) == 0)
-                                sb.Append("4 - Interior walls dry\n");
-                            if (string.Compare(destination, "Floor", 0) == 0)
-                                sb.Append("2 - Interior floors dry\n");
-                            if (string.Compare(destination, "Wall/Floor", 0) == 0)
-                            {
-                                sb.Append("2 - Interior floors dry\n");
-                                sb.Append("4 - Interior walls dry\n");
-                            }
-                        }
-
-                        break;
+                        case ApplicationsAreas.InteriorDryFloor:
+                            sb.Append("2 - Interior floors dry\n");
+                            break;
+                        case ApplicationsAreas.InteriorWetFloor:
+                            sb.Append("3 - Interior floors wet areas\n");
+                            break;
+                        case ApplicationsAreas.InteriorDryWall:
+                            sb.Append("4 - Interior walls dry\n");
+                            break;
+                        case ApplicationsAreas.InteriorWetWall:
+                            sb.Append("5 - Interior walls wet\n");
+                            break;
 
 
-                    case ApplicationsAreas.InteriorWet:
-                        //if (appAreasValue.HasFlag(flagToCheck))
-                        {
-                            if (string.Compare(destination, "Wall", 0) == 0)
-                                    sb.Append("5 - Interior walls wet\n");
-                            if (string.Compare(destination, "Floor", 0) == 0)
-                                    sb.Append("3 - Interior floors wet areas\n");
-                            if (string.Compare(destination, "Wall/Floor", 0) == 0)
-                                {
-                                sb.Append("3 - Interior floors wet areas\n");
-                                sb.Append("5 - Interior walls wet\n");
-                            }
-                        }
-                        break;
 
-                    case ApplicationsAreas.ShowerLinearDrains:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.ShowerLinearDrains:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("6 - Shower floor linear drains\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.Shower:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.Shower:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("7 - Shower Floors\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.ExteriorCovered:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.ExteriorCovered:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("8 - Exterior covered walls\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.Exterior:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.Exterior:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("9 - Exterior walls\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.ExteriorPaving:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.ExteriorPaving:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("10 - Exterior paving\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.PoolFountainFullLining:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.PoolFountainFullLining:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("11 - Pool fountain full lining\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.PoolFountainWaterline:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.PoolFountainWaterline:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("12 - Pool fountain waterline\n");
-                        break;
+                            break;
 
-                    case ApplicationsAreas.TileOverTile:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                        case ApplicationsAreas.TileOverTile:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("13 - Tile over tile\n");
-                        break;
-                    case ApplicationsAreas.Furniture:
-                        //if (appAreasValue.HasFlag(flagToCheck))
+                            break;
+                        case ApplicationsAreas.Furniture:
+                            //if (appAreasValue.HasFlag(flagToCheck))
                             sb.Append("14 - Furniture\n");
-                        break;
-                    default:
-                        break;
-                        ;
+                            break;
+                        default:
+                            break;
+                            ;
 
-                }
+                    }
 
             }
 
