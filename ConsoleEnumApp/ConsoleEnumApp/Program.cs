@@ -53,16 +53,22 @@ namespace ConsoleEnumApp
                 {33, "4,5,8"},
                 {34, "4,5,8,12"},
                 {35, "4,5,8,9"},
-                {36, "1,2,3,4,5,14"}
+                {36, "1,2,3,4,5,14"},
+                {37, "1,2,4,5,9,11,12"},
+                {38, "1,2,3,4,5,9,11,12"},
+                {39, "1,2,8,9,13"},
+                {40, "1,4,5,8,9,13"},
+                {41, "1,2,4,5,8,9,13"}
+                
             };
-            Console.WriteLine("Enter number between [8, 35] to process variants of the Crossville applications and press [Enter]");
+            Console.WriteLine("Enter number between [8, 41] to process variants of the Crossville applications and press [Enter]");
             
             
             //while (true)
             {
                 var input = Console.ReadLine();
                  var number = Int16.Parse(input);
-                if (number >= 8 && number <= 36)
+                if (number >= 8 && number <= 41)
             {  
                
                     seq = crossvilleDict[number];
