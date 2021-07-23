@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SOLIDApp.NormalWay
 {
-    class NormalWayApp
+    class NormalWayApp : IWayApp
     {
         public void ShowExample()
         {
