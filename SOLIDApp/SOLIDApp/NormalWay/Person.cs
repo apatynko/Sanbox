@@ -1,4 +1,4 @@
-﻿namespace SOLIDApp
+﻿namespace SOLIDApp.NormalWay
 {
     internal class Person
     {
