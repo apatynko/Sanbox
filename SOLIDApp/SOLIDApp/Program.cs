@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SOLIDApp.NormalWay;
+using System;
 
 namespace SOLIDApp
 {
@@ -6,7 +7,7 @@ namespace SOLIDApp
     {
         static void Main(string[] args)
         {
-            NormalWay.Example exampleNormalWay = new NormalWay.Example();
+            NormalWayApp exampleNormalWay = new NormalWayApp();
             exampleNormalWay.ShowExample();
         }
     }
