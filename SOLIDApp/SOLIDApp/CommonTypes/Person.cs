@@ -1,6 +1,6 @@
 ﻿namespace SOLIDApp.CommonTypes
 {
-    internal class Person
+    public class Person
     {
         public Person()
         {
