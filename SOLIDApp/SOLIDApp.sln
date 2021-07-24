@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OCPLibrary", "OCPLibrary\OC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSPLibrary", "LSPLibrary\LSPLibrary.csproj", "{10772374-3A58-41B1-A290-F2297B6D4630}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISPLibrary", "ISPLibrary\ISPLibrary.csproj", "{2AED0393-1688-41F5-811E-8F2CF8F09F07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{10772374-3A58-41B1-A290-F2297B6D4630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10772374-3A58-41B1-A290-F2297B6D4630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10772374-3A58-41B1-A290-F2297B6D4630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AED0393-1688-41F5-811E-8F2CF8F09F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AED0393-1688-41F5-811E-8F2CF8F09F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AED0393-1688-41F5-811E-8F2CF8F09F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AED0393-1688-41F5-811E-8F2CF8F09F07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
