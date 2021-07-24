@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DIPLibrary\DIPLibrary.csproj" />
+    <ProjectReference Include="..\ISPLibrary\ISPLibrary.csproj" />
     <ProjectReference Include="..\LSPLibrary\LSPLibrary.csproj" />
     <ProjectReference Include="..\OCPLibrary\OCPLibrary.csproj" />
     <ProjectReference Include="..\SRPLibrary\SRPLibrary.csproj" />

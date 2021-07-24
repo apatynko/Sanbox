@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRPLibrary", "SRPLibrary\SR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OCPLibrary", "OCPLibrary\OCPLibrary.csproj", "{C6217C17-F709-49F8-9A25-E834EB03090A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSPLibrary", "LSPLibrary\LSPLibrary.csproj", "{10772374-3A58-41B1-A290-F2297B6D4630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LSPLibrary", "LSPLibrary\LSPLibrary.csproj", "{10772374-3A58-41B1-A290-F2297B6D4630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISPLibrary", "ISPLibrary\ISPLibrary.csproj", "{2AED0393-1688-41F5-811E-8F2CF8F09F07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISPLibrary", "ISPLibrary\ISPLibrary.csproj", "{2AED0393-1688-41F5-811E-8F2CF8F09F07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIPLibrary", "DIPLibrary\DIPLibrary.csproj", "{4BB04802-ADBB-43E0-A51F-FD260152B0B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2AED0393-1688-41F5-811E-8F2CF8F09F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AED0393-1688-41F5-811E-8F2CF8F09F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AED0393-1688-41F5-811E-8F2CF8F09F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB04802-ADBB-43E0-A51F-FD260152B0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB04802-ADBB-43E0-A51F-FD260152B0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB04802-ADBB-43E0-A51F-FD260152B0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB04802-ADBB-43E0-A51F-FD260152B0B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

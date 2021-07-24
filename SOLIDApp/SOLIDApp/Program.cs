@@ -36,8 +36,15 @@ namespace SOLIDApp
             //LSPLibrary.NormalWay.NormalWayApp examplenormalWayApp = new LSPLibrary.NormalWay.NormalWayApp();
             //examplenormalWayApp.ShowExample();
 
-            LSPLibrary.LSPWay.LSPWayApp exampleLSPWayApp = new LSPLibrary.LSPWay.LSPWayApp();
-            exampleLSPWayApp.ShowExample();
+            //LSPLibrary.LSPWay.LSPWayApp exampleLSPWayApp = new LSPLibrary.LSPWay.LSPWayApp();
+            //exampleLSPWayApp.ShowExample();
+
+            //
+            // DIPLibrary
+            //
+
+            DIPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new DIPLibrary.NormalWay.NormalWayApp();
+            exampleNormalWayApp.ShowExample();
         }
     }
 }
