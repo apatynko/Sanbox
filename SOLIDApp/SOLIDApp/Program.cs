@@ -1,6 +1,6 @@
-﻿using SOLIDApp.NormalWay;
-using SOLIDApp.SRPWay;
-using System;
+﻿using System;
+using SRPLibrary.SRPWay;
+using SRPLibrary.NormalWay;
 
 namespace SOLIDApp
 {
@@ -11,7 +11,7 @@ namespace SOLIDApp
             //NormalWayApp exampleNormalWay = new NormalWayApp();
             //exampleNormalWay.ShowExample();
 
-            SPRWayApp exampleSPRlWay = new SPRWayApp();
+            SPRWayApp exampleSPRlWay = new SRPLibrary.SRPWay.SPRWayApp();
             exampleSPRlWay.ShowExample();
         }
     }
