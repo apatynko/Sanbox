@@ -13,18 +13,18 @@ namespace SOLIDApp
             // SRPLibrary
             //
 
-            // SRPLibrary.NormalWay.NormalWayApp exampleNormalWay = new SRPLibrary.NormalWay.NormalWayApp();
-            // exampleNormalWay.ShowExample();
+            //SRPLibrary.NormalWay.NormalWayApp exampleNormalWay = new SRPLibrary.NormalWay.NormalWayApp();
+            //exampleNormalWay.ShowExample();
 
-            // SPRWayApp exampleSPRlWay = new SRPLibrary.SRPWay.SPRWayApp();
-            // exampleSPRlWay.ShowExample();
+            //SPRWayApp exampleSPRlWay = new SRPLibrary.SRPWay.SPRWayApp();
+            //exampleSPRlWay.ShowExample();
 
             //
             // OCPLibrary
             //
 
-            // OCPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new OCPLibrary.NormalWay.NormalWayApp();
-            // exampleNormalWayApp.ShowExample();
+            //OCPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new OCPLibrary.NormalWay.NormalWayApp();
+            //exampleNormalWayApp.ShowExample();
 
             //OCPLibrary.OCPWay.OCPWayApp examplOCPWayApp = new OCPLibrary.OCPWay.OCPWayApp();
             //examplOCPWayApp.ShowExample();
@@ -33,8 +33,11 @@ namespace SOLIDApp
             // LSPLibrary
             //
 
-            LSPLibrary.NormalWay.NormalWayApp examplenormalWayApp = new LSPLibrary.NormalWay.NormalWayApp();
-            examplenormalWayApp.ShowExample();
+            //LSPLibrary.NormalWay.NormalWayApp examplenormalWayApp = new LSPLibrary.NormalWay.NormalWayApp();
+            //examplenormalWayApp.ShowExample();
+
+            LSPLibrary.LSPWay.LSPWayApp exampleLSPWayApp = new LSPLibrary.LSPWay.LSPWayApp();
+            exampleLSPWayApp.ShowExample();
         }
     }
 }
