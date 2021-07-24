@@ -18,8 +18,11 @@ namespace SOLIDApp
 
             // OCPLibrary
 
-            OCPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new OCPLibrary.NormalWay.NormalWayApp();
-            exampleNormalWayApp.ShowExample();
+            // OCPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new OCPLibrary.NormalWay.NormalWayApp();
+            // exampleNormalWayApp.ShowExample();
+
+            OCPLibrary.OCPWay.OCPWayApp examplOCPWayApp = new OCPLibrary.OCPWay.OCPWayApp();
+            examplOCPWayApp.ShowExample();
         }
     }
 }
