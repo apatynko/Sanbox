@@ -1,6 +1,5 @@
 ﻿using System;
 using SRPLibrary.SRPWay;
-using SRPLibrary.NormalWay;
 
 namespace SOLIDApp
 {
@@ -8,11 +7,19 @@ namespace SOLIDApp
     {
         static void Main(string[] args)
         {
-            //NormalWayApp exampleNormalWay = new NormalWayApp();
-            //exampleNormalWay.ShowExample();
 
-            SPRWayApp exampleSPRlWay = new SRPLibrary.SRPWay.SPRWayApp();
-            exampleSPRlWay.ShowExample();
+            // SRPLibrary
+
+            // SRPLibrary.NormalWay.NormalWayApp exampleNormalWay = new SRPLibrary.NormalWay.NormalWayApp();
+            // exampleNormalWay.ShowExample();
+
+            // SPRWayApp exampleSPRlWay = new SRPLibrary.SRPWay.SPRWayApp();
+            // exampleSPRlWay.ShowExample();
+
+            // OCPLibrary
+
+            OCPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new OCPLibrary.NormalWay.NormalWayApp();
+            exampleNormalWayApp.ShowExample();
         }
     }
 }
