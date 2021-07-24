@@ -7,6 +7,7 @@ namespace OCPLibrary.NormalWay
     public enum EmployeeType
     {
         Staff,
-        Manager
+        Manager,
+        Executive
     }
 }

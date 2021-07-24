@@ -13,7 +13,7 @@ namespace OCPLibrary.NormalWay
                 new PersonModel {FirstName = "Andrew", LastName = "Patynko"},
                 new PersonModel {FirstName = "Tim", LastName = "Corey"},
                 new PersonModel {FirstName = "Sue", LastName = "Storm", TypeOfEmployee = EmployeeType.Manager },
-                new PersonModel {FirstName = "Nancy", LastName = "Roman"}
+                new PersonModel {FirstName = "Nancy", LastName = "Roman", TypeOfEmployee = EmployeeType.Executive }
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
@@ -26,7 +26,7 @@ namespace OCPLibrary.NormalWay
 
             foreach (var emp in employees)
             {
-                Console.WriteLine($"{ emp.FirstName } { emp.LastName}: { emp.EmailAddress } IsManager: { emp.IsManager }");
+                Console.WriteLine($"{ emp.FirstName } { emp.LastName}: { emp.EmailAddress } IsManager: { emp.IsManager } IsExecutive: { emp.IsExecutive }");
             }
 
         }
