@@ -43,8 +43,11 @@ namespace SOLIDApp
             // DIPLibrary
             //
 
-            DIPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new DIPLibrary.NormalWay.NormalWayApp();
-            exampleNormalWayApp.ShowExample();
+            //DIPLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new DIPLibrary.NormalWay.NormalWayApp();
+            //exampleNormalWayApp.ShowExample();
+
+            DIPLibrary.DIPWay.DIPWayApp exampleDIPWayApp = new DIPLibrary.DIPWay.DIPWayApp();
+            exampleDIPWayApp.ShowExample();
         }
     }
 }
