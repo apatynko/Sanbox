@@ -17,8 +17,6 @@ namespace AutofacLibrary.DIPWay
         public void ProcessData()
         {
 
-            DataAccess dataAccess = new DataAccess();
-
             _logger.Log("Starting the processing of data.");
             Console.WriteLine();
 
