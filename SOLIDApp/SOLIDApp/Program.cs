@@ -53,11 +53,11 @@ namespace SOLIDApp
             // AutofacLibrary
             //
 
-            AutofacLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new AutofacLibrary.NormalWay.NormalWayApp();
-            exampleNormalWayApp.ShowExample();
+            //AutofacLibrary.NormalWay.NormalWayApp exampleNormalWayApp = new AutofacLibrary.NormalWay.NormalWayApp();
+            //exampleNormalWayApp.ShowExample();
 
-            //DIPLibrary.DIPWay.DIPWayApp exampleDIPWayApp = new DIPLibrary.DIPWay.DIPWayApp();
-            //exampleDIPWayApp.ShowExample();
+            AutofacLibrary.DIPWay.DIPWayApp exampleDIPWayApp = new AutofacLibrary.DIPWay.DIPWayApp();
+            exampleDIPWayApp.ShowExample();
         }
     }
 }
