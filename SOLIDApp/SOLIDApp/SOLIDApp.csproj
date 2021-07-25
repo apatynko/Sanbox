@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AutofacLibrary\AutofacLibrary.csproj" />
     <ProjectReference Include="..\DIPLibrary\DIPLibrary.csproj" />
     <ProjectReference Include="..\ISPLibrary\ISPLibrary.csproj" />
     <ProjectReference Include="..\LSPLibrary\LSPLibrary.csproj" />
