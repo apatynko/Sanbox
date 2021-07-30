@@ -55,7 +55,7 @@ namespace StatisticsApp.Repositories
                 }                
             }
             catch (Exception ex)
-            {
+            {                
                 var logger = GetLogger();
                 logger.LogException(ex);
                 

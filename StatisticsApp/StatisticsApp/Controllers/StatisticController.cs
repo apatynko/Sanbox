@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using StatisticsApp.Domain;
 using StatisticsApp.Services;
 using System;
@@ -13,10 +14,12 @@ namespace StatisticsApp.Controllers
     public class StatisticController : ControllerBase
     {
         private readonly IRoomImageInfoService _roomImageInfoService;
+        private readonly StatisticsApp.Services.ILogger _logger;
 
-        public StatisticController(IRoomImageInfoService roomImageInfoService)
+        public StatisticController(IRoomImageInfoService roomImageInfoService, ILogger logger)
         {
-            this._roomImageInfoService = roomImageInfoService;
+            _roomImageInfoService = roomImageInfoService;
+            _logger = logger;
         }
 
         [HttpPut]
@@ -26,18 +29,20 @@ namespace StatisticsApp.Controllers
             try
             {
                 if (ModelState.IsValid)
-                {
-                    // put roomimage info
+                {   
+                    roomImageInfo.Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString();                    
+
                     await _roomImageInfoService.CreateRoomImageInfoAsync(roomImageInfo);
+                    return Ok();
                 }
             }
             catch (Exception ex)
             {
-
-                throw;
+                _logger.LogException(ex);
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
-            return Ok();
+            return BadRequest();
         }
     }
 }
