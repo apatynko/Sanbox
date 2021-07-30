@@ -8,6 +8,6 @@ namespace StatisticsApp.Services
 {
     public interface IRoomImageInfoService
     {
-        public Task<int> CreateRoomImageInfoAsync(RoomImageInfo entity);
+        public Task CreateRoomImageInfoAsync(RoomImageInfo entity);
     }
 }

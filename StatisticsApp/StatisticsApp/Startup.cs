@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using StatisticsApp.Repositories;
+using StatisticsApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,11 @@ namespace StatisticsApp
         {
 
             services.AddControllers();
+
+            services.AddScoped<StatisticsApp.Services.ILogger, StatisticsApp.Services.Logger>();
+            services.AddScoped<IRoomImageInfoRepository, RoomImageInfoRepository>();
+            services.AddScoped<IRoomImageInfoService, RoomImageInfoService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StatisticsApp", Version = "v1" });

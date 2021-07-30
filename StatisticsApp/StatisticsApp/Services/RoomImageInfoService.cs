@@ -10,14 +10,16 @@ namespace StatisticsApp.Services
     public class RoomImageInfoService : IRoomImageInfoService
     {
         private readonly IRoomImageInfoRepository _roomImageInfoRepository;
+        private readonly ILogger _logger;
 
-        public RoomImageInfoService(IRoomImageInfoRepository roomImageInfoRepository)
+        public RoomImageInfoService(IRoomImageInfoRepository roomImageInfoRepository, ILogger logger)
         {
-            _roomImageInfoRepository = _roomImageInfoRepository;
+            _roomImageInfoRepository = roomImageInfoRepository;
+            _logger = logger;
         }
-        public Task<int> CreateRoomImageInfoAsync(RoomImageInfo entity)
+        public async Task CreateRoomImageInfoAsync(RoomImageInfo roomImageInfo)
         {
-            throw new NotImplementedException();
+            await _roomImageInfoRepository.CreateAsync(roomImageInfo);
         }
     }
 }
