@@ -43,6 +43,17 @@ namespace DILifetimeApp
             services.AddSingleton<ICounter, Counter>();
             services.AddTransient<IFirstCounter, FirstCounter>();
             services.AddTransient<ISecondCounter, SecondCounter>();
+
+            // Get all implementations of IRule and add them to the DI
+            var rules = typeof(Program).Assembly.GetTypes()
+                .Where(x => !x.IsAbstract && x.IsClass && x.GetInterface(nameof(IRule)) == typeof(IRule));
+
+            int l = rules.ToList().Count;
+            foreach (var rule in rules)
+            {
+                services.Add(new ServiceDescriptor(typeof(IRule), rule, ServiceLifetime.Transient));
+                // Replace Transient with whatever lifetime you need
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
