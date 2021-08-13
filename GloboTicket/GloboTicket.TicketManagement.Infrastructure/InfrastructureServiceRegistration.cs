@@ -12,6 +12,7 @@ namespace GloboTicket.TicketManagement.Infrastructure
         {
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 
+            services.AddTransient<ICsvExporter, CsvExporter>();
             services.AddTransient<IEmailService, EmailService>();
 
             return services;
